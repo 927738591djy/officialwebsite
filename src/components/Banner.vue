@@ -83,7 +83,6 @@ export default {
 @keyframes see {
     0% {
         transform: translatex(-100%);
-
     }
 
     100% {

@@ -197,7 +197,7 @@
               </a>
             </div>
           </div>
-          <a class="example_viewmore" href="./work/work.html">
+          <a  :class="{ 'appear': viewMoreShow }" class="example_viewmore" href="./work/work.html">
             view more
           </a>
 
@@ -291,7 +291,8 @@ export default {
       isAppear: false,
       exampleShow:false,
       aboutShow:false,
-      friendShow:false
+      friendShow:false,
+      viewMoreShow:false
     }
   },
   created() {
@@ -319,7 +320,8 @@ export default {
         this.exampleShow = true
       }
       if (window.scrollY >= 3491) {
-        this.aboutShow = true
+        this.aboutShow = true;
+        this.viewMoreShow = true
       }
       if (window.scrollY >= 4225) {
         this.friendShow = true
