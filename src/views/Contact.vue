@@ -1,71 +1,80 @@
 <template>
-  <div>
-    <div id="contents" aria-live="polite">
+    <div>
+        <div id="contents" aria-live="polite">
 
 
-<div>
-    <main class="works active">
-        <Banner title="Contact" text="联系我们"></Banner>
-        <section class="section-content js-scroll isView">
-            <div id="divOutput"></div>
-            <div class="code_box">
-                <img src="https://shenniudata-serverdata.oss-cn-beijing.aliyuncs.com/sn-door/images/zsd.jpg"
-                    style="width:250px;height:250px;">
-                <div>上海市松江区伴亭东路288号2号楼609</div>
-                <div>
-                    邮箱：zhusd@shenniudata.com</div>
+            <div>
+                <main class="works active">
+                    <Banner title="Contact" text="联系我们"></Banner>
+                    <section class="section-content js-scroll isView">
+                        <div id="divOutput"></div>
+                        <div class="code_box">
+                            <img src="https://shenniudata-serverdata.oss-cn-beijing.aliyuncs.com/sn-door/images/zsd.jpg"
+                                style="width:250px;height:250px;">
+                            <div>上海市松江区伴亭东路288号2号楼609</div>
+                            <div>
+                                邮箱：zhusd@shenniudata.com</div>
 
+                        </div>
+                        <div class="section-inner">
+                            <div class="fangkuai"></div>
+                            <div class="bg"></div>
+                        </div>
+                    </section>
+
+                </main>
             </div>
-            <div class="section-inner">
-                <div class="fangkuai"></div>
-                <div class="bg"></div>
-            </div>
-        </section>
+        </div>
 
-    </main>
-</div>
-</div>
-
-  </div>
+    </div>
 </template>
 
 <script>
-//  window.addEventListener('scroll', function () {
-//         console.log(window.scrollY);
-//         var fangkuai = document.querySelector('.fangkuai')
-//         if (this.window.scrollY >= 500) {
-//             console.log(window.scrollY);
-//             fangkuai.style.cssText = 'animation: seesmall 1s;'
-//         }
-//     })
-//     var str = "神牛数据，期待您的联系！"
-//     var i = 0;
-//     function outPuting() {
-//         var divOutput = document.getElementById('divOutput')
-//         if (i <= str.length) {
-//             divOutput.innerHTML = str.slice(0, i++) + "";
-//             setTimeout("outPuting()", 200)
-//         } else {
-//             divOutput.innerHTML = str;
-//             var codeBox = document.querySelector('.code_box')
-//             codeBox.style.cssText = 'animation: appear 1s forwards;'
-//         }
-//     }
-//     outPuting();
-//     停止计时器
-//     function stopSetTimeout() {
-//         var highestTimeoutId = setTimeout(';');
-//         for (var i = 0; i < highestTimeoutId; i++) {
-//             clearTimeout(i);
-//         }
-//     }
+
 
 import Banner from '@/components/Banner.vue'
 export default {
-name:'Contact',
-components:{
-    Banner
-}
+    name: 'Contact',
+    components: {
+        Banner
+    },
+    methods: {
+        outPuting: function () {
+            console.log(11111);
+            var str = "神牛数据，期待您的联系！"
+            var i = 0;
+            var divOutput = document.getElementById('divOutput')
+            if (i <= str.length) {
+                divOutput.innerHTML = str.slice(0, i++) + "";
+                // setTimeout(this.outPuting(), 200)
+                console.log('small')
+            } else {
+                divOutput.innerHTML = str;
+                console.log('sss');
+            }
+        }
+    },
+    mounted() {
+        this.outPuting();
+        window.addEventListener('scroll', function () {
+            console.log(window.scrollY);
+            var fangkuai = document.querySelector('.fangkuai')
+            if (this.window.scrollY >= 500) {
+                console.log(window.scrollY);
+                fangkuai.style.cssText = 'animation: seesmall 1s;'
+            }
+        })
+
+
+
+        // 停止计时器
+        // function stopSetTimeout() {
+        //     var highestTimeoutId = setTimeout(';');
+        //     for (var i = 0; i < highestTimeoutId; i++) {
+        //         clearTimeout(i);
+        //     }
+        // }
+    }
 }
 </script>
 
@@ -295,6 +304,8 @@ body {
     opacity: 0;
     -webkit-filter: drop-shadow(0 0 15px #EEBF23);
     filter: drop-shadow(0 0 15px #EEBF23);
+    animation: appear 2s forwards;
+    animation-delay: 2s;
 }
 
 .code_box img {

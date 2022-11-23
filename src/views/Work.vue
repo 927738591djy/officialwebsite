@@ -13,7 +13,7 @@
           <section class="section-content js-scroll isView">
 
             <div class="section-inner">
-              <div class="fangkuai"></div>
+              <div class="fangkuai" :class="{ 'seesmall': workShow }"></div>
               <ul class="list-works">
 
                 <li>
@@ -158,17 +158,39 @@ export default {
   name: 'Work',
   components: {
     Banner
+  },
+  data() {
+    return {
+      workShow:false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', () => {
+      console.log(11)
+      console.log(window.scrollY);
+      if (window.scrollY >= 683) {
+        this.workShow = true
+      }
+    
+    })
+
+
   }
 }
 </script>
 
 <style scoped>
+.seesmall {
+  animation: seesmall 1s;
+}
 section .section-inner {
   position: relative;
   width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   margin-bottom: 120px;
+  z-index: 10;
+  padding-top: 50px;
 }
 
 .fangkuai {
@@ -207,6 +229,7 @@ a {
   vertical-align: baseline;
   background: transparent;
 }
+
 .works .section-content {
   position: relative;
   overflow: hidden;
@@ -295,6 +318,7 @@ a {
   height: 350px;
   flex-shrink: 0;
   object-fit: contain;
+  transition: all .6s;
   /* transition: -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1); */
