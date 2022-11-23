@@ -400,9 +400,17 @@ td {
   margin: 0 5px;
 }
 
+body{
+  overflow: auto;
+  background: #fff;
+}
+
 @media (min-width: 1200px) {
   .container {
     width: 1190px;
   }
 }
 
+body{
+  background-color: #fff;
+}

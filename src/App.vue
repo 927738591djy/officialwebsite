@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import '@/assets/style/reset.css'
 import Top from '@/components/Top.vue'
 import Footer from '@/components/Footer.vue'
 
@@ -20,4 +19,8 @@ export default {
 </script>
 
 <style>
+body{
+  overflow: auto;
+  background-color: #fff;
+}
 </style>

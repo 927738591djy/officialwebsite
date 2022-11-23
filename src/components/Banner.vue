@@ -1,5 +1,5 @@
 <template>
-    <div>
+    
         <section class="section-head">
             <div class="black-area">
                 <div class="text-area">
@@ -10,7 +10,7 @@
             <img src="../assets/img/ability/ability.png" alt="">
 
         </section>
-    </div>
+    
 </template>
 
 <script>
@@ -79,5 +79,28 @@ export default {
     right: 0;
     bottom: -100px;
     animation: seetwo 1s;
+}
+@keyframes see {
+    0% {
+        transform: translatex(-100%);
+
+    }
+
+    100% {
+        transform: translatex(0);
+
+    }
+}
+
+@keyframes seetwo {
+    0% {
+        transform: translatex(200%);
+
+    }
+
+    100% {
+        transform: translatex(0);
+
+    }
 }
 </style>

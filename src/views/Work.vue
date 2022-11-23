@@ -162,7 +162,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 section .section-inner {
   position: relative;
   width: 1200px;

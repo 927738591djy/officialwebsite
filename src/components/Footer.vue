@@ -1,5 +1,5 @@
 <template>
-    <div>
+    
         <footer>
             <div class="top_area"></div>
             <div class="bottom_area">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </footer>
-    </div>
+    
 </template>
 
 <script>

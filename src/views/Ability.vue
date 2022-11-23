@@ -132,6 +132,11 @@ export default {
 </script>
 
 <style scoped>
+body {
+    margin: 0;
+    background-color: #fff;
+    overflow: auto;
+}
 section .section-inner {
   /* position: relative; */
   width: 100%;
@@ -293,7 +298,11 @@ body {
   /* height:1000px; */
   display: flex;
   justify-content: center;
-  margin: 200px 0;
+  margin: 0 0;
+  background:url('../assets/img/ability/bg.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
 }
 
 .list li {
@@ -305,6 +314,8 @@ body {
   box-shadow: 0 0 10px #ccc;
   padding: 30px 0;
   text-align: center;
+  animation: appear 3s forwards;
+  opacity: 0;
 }
 
 /* 未选中时可以点击范围 */
@@ -398,7 +409,7 @@ body {
 .tuwen {
   display: flex;
   justify-content: space-between;
-  margin: 150px 20px;
+  margin: 50px 20px;
   align-items: center;
 }
 

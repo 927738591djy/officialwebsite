@@ -1,5 +1,5 @@
 <template>
-    <div>
+    
         <header>
             <div class="section-inner">
                 <div class="header-area">
@@ -24,7 +24,7 @@
 
         </header>
 
-    </div>
+    
 </template>
 
 <script>
