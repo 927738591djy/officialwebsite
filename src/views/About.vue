@@ -1,0 +1,475 @@
+<template>
+    <div>
+
+        <div class="wrapper">
+            
+            <div id="contents" aria-live="polite">
+
+
+                <div class="container" data-namespace="single" style="visibility: visible;">
+                    <main class="works active">
+                        <section class="section-head">
+                            <div class="black-area">
+                                <div class="section-inner">
+                                    <div class="text-area">
+                                        <h2>about</h2>
+                                        <p class="text-mini">关于我们</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="section-content js-scroll isView">
+
+                            <div class="section-inner">
+                                <div class="about_white">
+                                    <h2>ShenNiuData</h2>
+                                    <span>专业定制化服务，立足上海，辐射全国
+                                    </span>
+                                    <div class="about_connect_box">
+                                        <p>
+                                            上海神牛数据综合服务平台主要从事于大数据开发、前端开发、OA&CRM系统开发、物联网产品开发等。大数据平台于2018年1月发布，是基于DAMA国际数据管理协会标准，以及OMG国际组织的CWM元数据标准，为顾客提供系统平台研发、大数据管理、数据集成处理、数据报表和BI管理等服务。
+                                            前端开发包括APP、小程序、公众号、定制化开发。
+                                        </p>
+                                        <a href="../connect/connect.html" class="connect">
+                                            <div class="connect_arrow">
+                                                <img src="../assets/img/about/arrow.png" alt=""/>
+                                            </div>
+                                            <div>联系我们</div>
+                                        </a>
+                                    </div>
+                                    <img src="../assets/img/about/qiye.png" alt="">
+                                </div>
+
+                                <div class="about_more">
+                                    <div>更多的我们</div>
+
+                                </div>
+                            </div>
+                        </section>
+
+
+
+
+                    </main>
+
+                    <div class="tuwen">
+                        <div class="wen">
+                            <h2>团队成员</h2>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;公司拥有强大管理和研发团队，招揽了互联网、数据研究、技术研发、深资设计等方面的高端人才。公司核心技术团队包括清华等国内知名高校的博士和硕士，具有深厚的技术支持。
+                            </p>
+                        </div>
+                        <img class="tuwen_img" src="../assets/img/about/chengyuan.png" alt="777">
+                    </div>
+
+                    <div class="tuwen">
+                        <img class="tuwen_img" src="../assets/img/about/mubiao.png" alt="">
+                        <div class="wenfan">
+                            <h2>企业目标</h2>
+                            <div>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;在大数据时代浪潮中，神牛数据以未来社区建设作为发展起点，立志成为一家全世界一流智慧终端、融合网、云大脑、N平台的高科技公司！
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tuwen">
+                        <div class="wen">
+                            <h2>服务理念</h2>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;秉承“奋斗为本，成就客户，创造分享，共同成长”的核心价值观，成为客户长期、稳定、可信赖的合作伙伴，为成为软件开发领域标杆高新企业而奋斗，致力于每位客户的满意和成功。成就客户，共创共赢。
+                            </p>
+                        </div>
+                        <img class="tuwen_img" src="../assets/img/about/fuwu.png" alt="777">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'About',
+}
+</script>
+
+<style scoped>
+section .section-inner {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 120px;
+}
+
+.fangkuai {
+    background-color: #f4f4f4;
+    width: 326px;
+    height: 200%;
+    position: absolute;
+    top: -400px;
+    left: 10%;
+    transform: rotate(10deg);
+    z-index: -1;
+}
+
+h1 {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    font-size: 11px;
+    color: #888888;
+    letter-spacing: 1.83px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: normal;
+}
+
+.breadcrumbs {
+    display: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.section-head {
+    padding-top: 140px;
+    position: relative;
+}
+
+.works .section-head:before {
+    content: "";
+    width: 681px;
+    height: 261px;
+    background: url('../assets/img/about/about.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    z-index: 2;
+    animation: seetwo 1s;
+}
+
+.section-head .black-area {
+    position: relative;
+    height: 325px;
+    width: 80%;
+    background-color: #000;
+    animation: see 1s;
+}
+
+.section-head .black-area .section-inner {
+    position: relative;
+    height: 100%;
+    padding: 91px 0 36px 0;
+    box-sizing: border-box;
+
+}
+
+.section-head .black-area .section-inner:before {
+    content: "";
+    background: url('../assets/img/index/company.png') no-repeat;
+    width: 83px;
+    height: 325px;
+    position: absolute;
+    background-size: 100%;
+    left: 937px;
+    top: 0;
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-100vw);
+    transition: -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
+    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
+    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
+}
+
+.section-head h2 {
+    color: #fff;
+    font-size: 50px;
+    font-family: "Akrobat";
+    letter-spacing: 6.25px;
+}
+
+.section-head .text-mini {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 26px;
+}
+
+.section-head .text-breadcrumbs {
+    margin-top: 100px;
+    display: flex;
+}
+
+.section-head .text-breadcrumbs a {
+    color: #888888;
+    font-size: 12px;
+    text-decoration: none;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.section-head .text-breadcrumbs span {
+    font-size: 12px;
+    margin: 0 0.5em;
+    color: #888888;
+}
+
+.section-head .black-area .section-inner:after {
+    content: "";
+    position: absolute;
+    width: 2090px;
+    height: 325px;
+    background-color: #111;
+    position: absolute;
+    left: -1150px;
+    top: 0;
+    z-index: -10;
+    transform: translateX(-100vw);
+    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
+    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
+}
+
+.section-content .section-inner {
+    width: 100%;
+    margin: 120px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+main {
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+}
+
+@keyframes see {
+    0% {
+        transform: translatex(-100%);
+
+    }
+
+    100% {
+        transform: translatex(0);
+
+    }
+}
+
+@keyframes seetwo {
+    0% {
+        transform: translatex(200%);
+
+    }
+
+    100% {
+        transform: translatex(0);
+
+    }
+}
+
+@keyframes seesmall {
+    0% {
+        transform: translateY(-50%);
+
+    }
+
+    100% {
+        transform: translateY(0) rotate(10deg);
+
+    }
+}
+
+
+.about_us {
+    margin: 200px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.about_img {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 400px;
+    margin: 30px 0;
+    /* margin: 10px; */
+}
+
+
+
+
+
+li {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+}
+
+.about_white {
+    width: 60%;
+}
+
+.about_connect_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.about_connect_box p {
+    width: 50%;
+    margin: 50px 0;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.about_white img {
+    width: 100%;
+    height: 560px;
+    border-radius: 10px;
+}
+
+.about_white h2 {
+    font-size: 50px;
+    color: #f0d25a;
+    margin: 0;
+}
+
+.about_white span {
+    font-size: 40px;
+    color: #000;
+    margin: 30px 0 0 0;
+    display: block;
+}
+
+.connect {
+    display: block;
+    color: #000;
+    margin-bottom: 50px;
+    color: #1d1d1d;
+    border: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    justify-content: space-between;
+    border-radius: 50px;
+}
+
+.connect_arrow {
+    background-color: #f0d25a;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin-right: 60px;
+}
+
+.connect_arrow img {
+    width: 100%;
+    height: 100%;
+}
+
+.about_more {
+    position: relative;
+    font-size: 70px;
+    color: #fff;
+    width: 735px;
+    height: 400px;
+    background-color: #f0d25a;
+    margin: 80px auto;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 400px;
+    z-index: -1;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.tuwen {
+    display: flex;
+    justify-content: space-between;
+    margin: 150px 20px;
+    align-items: center;
+
+}
+
+.tuwen img {
+    border-radius: 15px;
+    width: 600px;
+    height: 400px;
+    /* animation: appear 3s forwards infinite; */
+    transition: all 0.6s;
+    float: right;
+    opacity: 0;
+}
+
+.tuwen span {
+    display: inline-block;
+    font-size: 30px;
+    border-bottom: 10px solid #ccc;
+    line-height: 20px;
+    margin: 15px 0;
+}
+
+.tuwen h2 {
+    font-size: 35px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 50px;
+    color: #f0d25a;
+    /* margin: 0; */
+}
+
+.tuwen p {
+    font-size: 18px;
+    margin: 30px 0;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tuwen .wen {
+    margin-right: 30px;
+}
+
+.tuwen .wenfan {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+</style>
