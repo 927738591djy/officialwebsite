@@ -6,7 +6,7 @@
                     <div class="logo-main">
                         <router-link to="/">
                             <img src="../img/logo.png" alt="GIG INC.">
-                            <h2>神牛数据</h2>
+                            <div>神牛数据</div>
                         </router-link>
                     </div>
                     <nav>
@@ -56,7 +56,7 @@ header .section-inner {
 header .header-area {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 40px 0;
     transition: padding-top 0.5s linear;
 }
 
@@ -70,8 +70,10 @@ header .header-area .logo-main a {
     display: flex;
     text-decoration: none;
     color: #000;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
 }
-
 header nav .navi-global {
     display: flex;
     justify-content: center;

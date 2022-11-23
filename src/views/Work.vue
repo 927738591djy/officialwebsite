@@ -3,25 +3,13 @@
     <div id="contents" aria-live="polite">
 
 
-      <div class="container" data-namespace="single" style="visibility: visible;">
+      <div>
         <main class="works active">
           <!-- <div class="page_title section-inner  ">
                       <h1>WEB制作実績｜東京のWEB制作会社・ホームページ制作会社｜株式会社GIG</h1>
                   </div> -->
-          <ul class="breadcrumbs">
-            <li><a href="/">HOME</a><span>＞</span></li>
-            <li><a href="#">WORKS</a></li>
-          </ul>
-          <section class="section-head">
-            <div class="black-area">
-              <div class="section-inner">
-                <div class="text-area">
-                  <h2>WORKS</h2>
-                  <p class="text-mini">项目案例</p>
-                </div>
-              </div>
-            </div>
-          </section>
+          <Banner title="Works" text="案例展示"></Banner>
+
           <section class="section-content js-scroll isView">
 
             <div class="section-inner">
@@ -103,7 +91,7 @@
                 <li>
                   <a href="/works/mixi">
                     <p class="thumb">
-                      <img src="../assets/img/taptap/1.png" alt=""/>
+                      <img src="../assets/img/taptap/1.png" alt="" />
                     </p>
                     <div class="detail-box">
                       <p class="client">
@@ -121,7 +109,7 @@
                 <li>
                   <a href="/works/scienceportal">
                     <p class="thumb">
-                      <img src="../assets/img/taptap/1.png" alt=""/>
+                      <img src="../assets/img/taptap/1.png" alt="" />
                     </p>
                     <div class="detail-box">
                       <p class="client">
@@ -139,7 +127,7 @@
                 <li>
                   <a href="/works/jal">
                     <p class="thumb">
-                      <img src="../assets/img/taptap/1.png" alt=""/>
+                      <img src="../assets/img/taptap/1.png" alt="" />
                     </p>
                     <div class="detail-box">
                       <p class="client">
@@ -165,186 +153,93 @@
 </template>
 
 <script>
+import Banner from '@/components/Banner.vue'
 export default {
-  name: 'Work'
+  name: 'Work',
+  components: {
+    Banner
+  }
 }
 </script>
 
 <style>
 section .section-inner {
-    position: relative;
-    width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    margin-bottom: 120px;
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 120px;
 }
+
 .fangkuai {
-    background-color: #f4f4f4;
-    width: 326px;
-    height: 200%;
-    position: absolute;
-    top:-400px;
-    left: 10%;
-    transform: rotate(10deg);
-    z-index: -1;
+  background-color: #f4f4f4;
+  width: 326px;
+  height: 200%;
+  position: absolute;
+  top: -400px;
+  left: 10%;
+  transform: rotate(10deg);
+  z-index: -1;
 }
 
 h1 {
-    position: absolute;
-    right: 0;
-    top: 40px;
-    font-size: 11px;
-    color: #888888;
-    letter-spacing: 1.83px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: flex-end;
-    font-weight: normal;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  font-size: 11px;
+  color: #888888;
+  letter-spacing: 1.83px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: normal;
 }
 
 .breadcrumbs {
-    display: none;
+  display: none;
 }
 
 a {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
-
-.section-head {
-    padding-top: 140px;
-    position: relative;
-}
-
-.works .section-head:before {
-    content: "";
-    width: 681px;
-    height: 261px;
-    background: url('../assets/img/work/header.png') no-repeat;
-    background-size: 100%;
-    position: absolute;
-    right: 0;
-    bottom: -100px;
-    z-index: 2;
-    animation: seetwo 1s;
-}
-
-.section-head .black-area {
-    position: relative;
-    height: 325px;
-    width: 80%;
-    background-color: #000;
-    animation: see 1s;
-}
-
-.section-head .black-area .section-inner {
-    position: relative;
-    height: 100%;
-    padding: 91px 0 36px 0;
-    box-sizing: border-box;
-}
-
-.section-head .black-area .section-inner:before {
-    content: "";
-    background: url('../assets/img/index/company.png') no-repeat;
-    width: 83px;
-    height: 325px;
-    position: absolute;
-    background-size: 100%;
-    left: 937px;
-    top: 0;
-    -webkit-transform: translateX(-100vw);
-    transform: translateX(-100vw);
-    -webkit-transition: -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-}
-
-.section-head h2 {
-    color: #fff;
-    font-size: 50px;
-    font-family: "Akrobat";
-    letter-spacing: 6.25px;
-}
-
-.section-head .text-mini {
-    color: #fff;
-    font-size: 16px;
-    margin-top: 26px;
-}
-
-.section-head .text-breadcrumbs {
-    margin-top: 100px;
-    display: flex;
-}
-
-.section-head .text-breadcrumbs a {
-    color: #888888;
-    font-size: 12px;
-    text-decoration: none;
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
-}
-
-.section-head .text-breadcrumbs span {
-    font-size: 12px;
-    margin: 0 0.5em;
-    color: #888888;
-}
-
-.section-head .black-area .section-inner:after {
-    content: "";
-    position: absolute;
-    width: 2090px;
-    height: 325px;
-    background-color: #111;
-    position: absolute;
-    left: -1150px;
-    top: 0;
-    z-index: -10;
-    transform: translateX(-100vw);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-}
-
 .works .section-content {
-    position: relative;
-    overflow: hidden;
-    margin-top: 178px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 178px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .works .section-content .section-inner:before {
-    content: "";
-    background-color: #f4f4f4;
-    width: 326px;
-    height: 200%;
-    position: absolute;
-    left: 0;
-    top: -170px;
-    transform: rotate(15deg);
-    z-index: -1;
-    clip-path: inset(0 0 100% 0);
-    -webkit-transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s, -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    top: -400px;
-    left: -500px;
+  content: "";
+  background-color: #f4f4f4;
+  width: 326px;
+  height: 200%;
+  position: absolute;
+  left: 0;
+  top: -170px;
+  transform: rotate(15deg);
+  z-index: -1;
+  clip-path: inset(0 0 100% 0);
+  -webkit-transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s, -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  top: -400px;
+  left: -500px;
 }
 
 .works .section-content .list-works {
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    transition: all 1s ease 0.4s;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: all 1s ease 0.4s;
 }
 
 /* .works .section-content .list-works li {
@@ -356,202 +251,205 @@ a {
 } */
 
 .works .section-content .list-works li a {
-    position: relative;
-    text-decoration: none;
-    color: #111;
-    width: 100%;
-    height: 100%;
-    display: block;
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
+
 .section-content .list-works li:hover img {
-    transform: scale(1.2)
+  transform: scale(1.2)
 }
+
 .section-content .list-works li:hover a::before {
-    transform: translateX(10px)
+  transform: translateX(10px)
 }
+
 .works .section-content .list-works li a:before {
-    content: "";
-    background: url('../assets/img/icon-arrow-black.png') no-repeat;
-    width: 32px;
-    height: 11px;
-    background-size: 100%;
-    position: absolute;
-    z-index: 50;
-    left: 32px;
-    bottom: 32px;
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    transition: -webkit-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-    left: initial;
-    right: 30px;
-    bottom: 32px;
+  content: "";
+  background: url('../assets/img/icon-arrow-black.png') no-repeat;
+  width: 32px;
+  height: 11px;
+  background-size: 100%;
+  position: absolute;
+  z-index: 50;
+  left: 32px;
+  bottom: 32px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  left: initial;
+  right: 30px;
+  bottom: 32px;
 }
 
 .works .section-content .list-works li .thumb {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .works .section-content .list-works li img {
-    width: 560px;
-    height: 350px;
-    flex-shrink: 0;
-    object-fit: contain;
-    /* transition: -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 560px;
+  height: 350px;
+  flex-shrink: 0;
+  object-fit: contain;
+  /* transition: -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 1s cubic-bezier(0.165, 0.84, 0.44, 1); */
 }
 
 .works .section-content .list-works li .detail-box {
-    position: relative;
-    margin: 0 80px;
+  position: relative;
+  margin: 0 80px;
 }
 
 .works .section-content .list-works li .detail-box:before {
-    content: "";
-    background-color: yellow;
-    width: 30px;
-    height: 88px;
-    background-size: 100%;
-    position: absolute;
-    left: -50px;
-    top: -70px;
+  content: "";
+  background-color: yellow;
+  width: 30px;
+  height: 88px;
+  background-size: 100%;
+  position: absolute;
+  left: -50px;
+  top: -70px;
 }
 
 .works .section-content .list-works li .client {
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 21px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 21px;
 }
 
 .works .section-content .list-works li .title {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.4;
-    margin: 10px 0;
-    letter-spacing: 0.6px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 10px 0;
+  letter-spacing: 0.6px;
 }
 
 .works .section-content .list-works li .category {
-    color: #888888;
-    font-size: 12px;
-    font-family: "akrobat";
-    line-height: 1.5;
+  color: #888888;
+  font-size: 12px;
+  font-family: "akrobat";
+  line-height: 1.5;
 }
 
 .works .section-content .list-works li a {
-    position: relative;
-    text-decoration: none;
-    color: #111;
-    width: 100%;
-    height: 100%;
-    display: block;
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .works .section-content .list-works li:nth-child(even) {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 .works .section-content .list-works li {
-    width: 560px;
-    height: 600px;
-    margin-bottom: 80px;
-    background-color: #fff;
-    -webkit-box-shadow: 11px 13px 27px 6px rgb(0 0 0 / 8%);
-    box-shadow: 11px 13px 27px 6px rgb(0 0 0 / 8%);
+  width: 560px;
+  height: 600px;
+  margin-bottom: 80px;
+  background-color: #fff;
+  -webkit-box-shadow: 11px 13px 27px 6px rgb(0 0 0 / 8%);
+  box-shadow: 11px 13px 27px 6px rgb(0 0 0 / 8%);
 }
 
 .works .section-content .list-works li a {
-    position: relative;
-    text-decoration: none;
-    color: #111;
-    width: 100%;
-    height: 100%;
-    display: block;
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .works .section-content .section-inner:after {
-    content: "";
-    background-color: #f4f4f4;
-    width: 326px;
-    height: 200%;
-    position: absolute;
-    left: 0;
-    top: -170px;
-    -webkit-transform: rotate(15deg);
-    transform: rotate(15deg);
-    z-index: -1;
-    -webkit-clip-path: inset(0 0 100% 0);
-    clip-path: inset(0 0 100% 0);
-    -webkit-transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s, -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    top: initial;
-    left: initial;
-    right: -400px;
-    bottom: -400px;
+  content: "";
+  background-color: #f4f4f4;
+  width: 326px;
+  height: 200%;
+  position: absolute;
+  left: 0;
+  top: -170px;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  z-index: -1;
+  -webkit-clip-path: inset(0 0 100% 0);
+  clip-path: inset(0 0 100% 0);
+  -webkit-transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s, -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  top: initial;
+  left: initial;
+  right: -400px;
+  bottom: -400px;
 }
 
 
 .works .section-content .section-inner:after {
-    content: "";
-    background-color: #f4f4f4;
-    width: 326px;
-    height: 200%;
-    position: absolute;
-    left: 0;
-    top: -170px;
-    transform: rotate(15deg);
-    z-index: -1;
-    -webkit-clip-path: inset(0 0 100% 0);
-    clip-path: inset(0 0 100% 0);
-    transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s, -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
-    top: initial;
-    left: initial;
-    right: -400px;
-    bottom: -400px;
+  content: "";
+  background-color: #f4f4f4;
+  width: 326px;
+  height: 200%;
+  position: absolute;
+  left: 0;
+  top: -170px;
+  transform: rotate(15deg);
+  z-index: -1;
+  -webkit-clip-path: inset(0 0 100% 0);
+  clip-path: inset(0 0 100% 0);
+  transition: -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  transition: clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s, -webkit-clip-path 1.5s cubic-bezier(0.475, 0.425, 0, 0.995) 0.2s;
+  top: initial;
+  left: initial;
+  right: -400px;
+  bottom: -400px;
 }
 
 main {
-    display: block;
+  display: block;
 }
 
 @keyframes see {
-    0% {
-        transform: translatex(-100%);
+  0% {
+    transform: translatex(-100%);
 
-    }
+  }
 
-    100% {
-        transform: translatex(0);
+  100% {
+    transform: translatex(0);
 
-    }
+  }
 }
 
 @keyframes seetwo {
-    0% {
-        transform: translatex(200%);
+  0% {
+    transform: translatex(200%);
 
-    }
+  }
 
-    100% {
-        transform: translatex(0);
+  100% {
+    transform: translatex(0);
 
-    }
+  }
 }
 
 @keyframes seesmall {
-    0% {
-        transform: translateY(-50%);
+  0% {
+    transform: translateY(-50%);
 
-    }
+  }
 
-    100% {
-        transform: translateY(0) rotate(10deg);
+  100% {
+    transform: translateY(0) rotate(10deg);
 
-    }
+  }
 }
 </style>

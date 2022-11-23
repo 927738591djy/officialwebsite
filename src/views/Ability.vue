@@ -2,18 +2,9 @@
   <div id="contents" aria-live="polite">
 
 
-    <div class="container" data-namespace="single" style="visibility: visible;">
+    <div>
       <main class="works active">
-        <section class="section-head">
-          <div class="black-area">
-            <div class="section-inner">
-              <div class="text-area">
-                <h2>ability</h2>
-                <p class="text-mini">业务能力</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <Banner title="ability" text="业务能力" ></Banner>
         <section class="section-content js-scroll isView">
 
           <div class="section-inner">
@@ -25,26 +16,26 @@
               <ul>
                 <li>
                   <div class="black_box">定制化开发</div>
-                  <input type="radio" name="swith">
+                  <input type="radio" name="swith"/>
                   <div class="bj"></div>
                 </li>
                 <li>
                   <div class="black_box">小程序开发</div>
-                  <input type="radio" name="swith" checked>
+                  <input type="radio" name="swith" checked />
                   <div class="bj">
                     <div></div>
                   </div>
                 </li>
                 <li>
                   <div class="black_box">app开发</div>
-                  <input type="radio" name="swith">
+                  <input type="radio" name="swith" />
                   <div class="bj">
                     <div></div>
                   </div>
                 </li>
                 <li>
                   <div class="black_box">物联网</div>
-                  <input type="radio" name="swith">
+                  <input type="radio" name="swith"/>
                   <div class="bj">
                     <div></div>
                   </div>
@@ -131,8 +122,12 @@
 </template>
 
 <script>
+import Banner from '@/components/Banner.vue'
 export default {
-  name: 'Ability'
+  name: 'Ability',
+  components:{
+    Banner
+  }
 }
 </script>
 
@@ -170,103 +165,6 @@ a {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
-}
-
-.section-head {
-  padding-top: 140px;
-  position: relative;
-}
-
-.works .section-head:before {
-  content: "";
-  width: 681px;
-  height: 261px;
-  background: url('../assets/img/ability/ability.png') no-repeat;
-  background-size: 100%;
-  position: absolute;
-  right: 0;
-  bottom: -100px;
-  z-index: 2;
-  animation: seetwo 1s;
-}
-
-.section-head .black-area {
-  position: relative;
-  height: 325px;
-  width: 80%;
-  background-color: #000;
-  animation: see 1s;
-}
-
-.section-head .black-area .section-inner {
-  position: relative;
-  height: 100%;
-  padding: 91px 0 36px 0;
-  box-sizing: border-box;
-}
-
-.section-head .black-area .section-inner:before {
-  content: "";
-  background: url('../assets/img/index/company.png') no-repeat;
-  width: 83px;
-  height: 325px;
-  position: absolute;
-  background-size: 100%;
-  left: 937px;
-  top: 0;
-  -webkit-transform: translateX(-100vw);
-  transform: translateX(-100vw);
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-  transition: -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-  transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-  transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-}
-
-.section-head h2 {
-  color: #fff;
-  font-size: 50px;
-  font-family: "Akrobat";
-  letter-spacing: 6.25px;
-}
-
-.section-head .text-mini {
-  color: #fff;
-  font-size: 16px;
-  margin-top: 26px;
-}
-
-.section-head .text-breadcrumbs {
-  margin-top: 100px;
-  display: flex;
-}
-
-.section-head .text-breadcrumbs a {
-  color: #888888;
-  font-size: 12px;
-  text-decoration: none;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-}
-
-.section-head .text-breadcrumbs span {
-  font-size: 12px;
-  margin: 0 0.5em;
-  color: #888888;
-}
-
-.section-head .black-area .section-inner:after {
-  content: "";
-  position: absolute;
-  width: 2090px;
-  height: 325px;
-  background-color: #111;
-  position: absolute;
-  left: -1150px;
-  top: 0;
-  z-index: -10;
-  transform: translateX(-100vw);
-  transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-  transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
 }
 
 .works .section-content {
@@ -432,12 +330,12 @@ input:hover {
 
 .list li:nth-child(1),
 .list ul :nth-child(1) .bj {
-  background: url('../assets/img/ability/dinzhi.png')no-repeat center/cover;
+  background: url('../assets/img/ability/dinzhi.png')no-repeat center/cover !important;
 }
 
 .list li:nth-child(2),
 .list ul :nth-child(2) .bj {
-  background: url('../assets/img/ability/chengxu.png') no-repeat center/cover;
+  background: url('../assets/img/ability/chengxu.png') no-repeat center/cover !important;
 }
 
 /* 
@@ -446,7 +344,7 @@ input:hover {
 
 .list ul :nth-child(3),
 .list ul :nth-child(3) .bj {
-  background: url('../assets/img/ability/app.png') no-repeat center/cover;
+  background: url('../assets/img/ability/app.png') no-repeat center/cover ;
 }
 
 .list ul :nth-child(4),
@@ -470,11 +368,12 @@ input:hover {
   z-index: -1;
   /* css3滤镜效果 */
   /* filter: blur(2.3px); */
+  background-color: pink;
 }
 
 /* 当点击input的时候inpu的兄弟.bj的背景就不透明了，显示于页面之上 */
 
-input[name="swith"]:hover~.bj {
+input[name="swith"]:hover .bj {
   opacity: 1;
 }
 

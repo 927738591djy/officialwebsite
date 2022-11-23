@@ -3,18 +3,9 @@
     <div id="contents" aria-live="polite">
 
 
-<div class="container" data-namespace="single" style="visibility: visible;">
+<div>
     <main class="works active">
-        <section class="section-head">
-            <div class="black-area">
-                <div class="section-inner">
-                    <div class="text-area">
-                        <h2>contact</h2>
-                        <p class="text-mini">联系我们</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Banner title="Contact" text="联系我们"></Banner>
         <section class="section-content js-scroll isView">
             <div id="divOutput"></div>
             <div class="code_box">
@@ -69,9 +60,12 @@
 //         }
 //     }
 
-
+import Banner from '@/components/Banner.vue'
 export default {
-name:'Contact'
+name:'Contact',
+components:{
+    Banner
+}
 }
 </script>
 
@@ -115,103 +109,6 @@ a {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
-}
-
-.section-head {
-    padding-top: 140px;
-    position: relative;
-}
-
-.works .section-head:before {
-    content: "";
-    width: 681px;
-    height: 261px;
-    background: url('../assets/img/contact/contact.png') no-repeat;
-    background-size: 100%;
-    position: absolute;
-    right: 0;
-    bottom: -100px;
-    z-index: 2;
-    animation: seetwo 1s;
-}
-
-.section-head .black-area {
-    position: relative;
-    height: 325px;
-    width: 80%;
-    background-color: #000;
-    animation: see 1s;
-}
-
-.section-head .black-area .section-inner {
-    position: relative;
-    height: 100%;
-    padding: 91px 0 36px 0;
-    box-sizing: border-box;
-}
-
-.section-head .black-area .section-inner:before {
-    content: "";
-    background: url('../assets/img/index/company.png') no-repeat;
-    width: 83px;
-    height: 325px;
-    position: absolute;
-    background-size: 100%;
-    left: 937px;
-    top: 0;
-    -webkit-transform: translateX(-100vw);
-    transform: translateX(-100vw);
-    -webkit-transition: -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-}
-
-.section-head h2 {
-    color: #fff;
-    font-size: 50px;
-    font-family: "Akrobat";
-    letter-spacing: 6.25px;
-}
-
-.section-head .text-mini {
-    color: #fff;
-    font-size: 16px;
-    margin-top: 26px;
-}
-
-.section-head .text-breadcrumbs {
-    margin-top: 100px;
-    display: flex;
-}
-
-.section-head .text-breadcrumbs a {
-    color: #888888;
-    font-size: 12px;
-    text-decoration: none;
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
-}
-
-.section-head .text-breadcrumbs span {
-    font-size: 12px;
-    margin: 0 0.5em;
-    color: #888888;
-}
-
-.section-head .black-area .section-inner:after {
-    content: "";
-    position: absolute;
-    width: 2090px;
-    height: 325px;
-    background-color: #111;
-    position: absolute;
-    left: -1150px;
-    top: 0;
-    z-index: -10;
-    transform: translateX(-100vw);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
-    transition: transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96), -webkit-transform 1s cubic-bezier(0.79, 0.17, 0.15, 0.96);
 }
 
 .works .section-content {

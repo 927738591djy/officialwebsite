@@ -278,27 +278,6 @@
         </ul>
       </div>
     </div>
-
-
-    <footer>
-      <div class="top_area"></div>
-      <div class="bottom_area">
-        <div class="footer_inner">
-          <div class="navi-box">
-            <p class="navi-name grey"> CORPORATE</p>
-            <ul class="list-navi_global">
-              <li><a href="./work/work.html"> <span>项目案例</span></a></li>
-              <li><a href="./ability/ability.html"><span>业务能力</span></a></li>
-              <li><a href="./about/about.html"> <span>关于我们</span></a></li>
-              <li><a href="./connect/connect.html"> <span>联系我们</span></a></li>
-            </ul>
-          </div>
-          <div class="number">COPYRIGHT © 2018 POWERED BY SHENNIUDATA 备案号：沪ICP备18027450号-1</div>
-
-        </div>
-      </div>
-    </footer>
-
   </div>
 </template>
   
