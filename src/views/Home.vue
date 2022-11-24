@@ -5,17 +5,17 @@
 
       <div class="img-area">
         <div class="part01 part luxy-el" data-horizontal="1" data-speed-x="-5">
-          <img class="part1" data-rellax-speed="3" src="../assets/img/index/A.png" alt="">
+          <img class="part1" data-rellax-speed="3" src="../assets/img/index/S.png" alt="">
         </div>
         <div class="part02 part">
-          <img class="part2" data-rellax-speed="-2" src="../assets/img/index/P.png" alt=""
+          <img class="part2" data-rellax-speed="-2" src="../assets/img/index/N.png" alt=""
             style="transform: translate3d(0px, 0px, 0px);">
         </div>
         <div class="part03 part">
-          <img class="part3" data-rellax-speed="4" src="../assets/img/index/I.png" alt="">
+          <img class="part3" data-rellax-speed="4" src="../assets/img/index/D.png" alt="">
         </div>
         <div class="part04 part">
-          <img class="part4" data-rellax-speed="2" src="../assets/img/index/S.png" alt="">
+          <img class="part4" data-rellax-speed="2" src="../assets/img/index/T.png" alt="">
         </div>
         <!-- <div class="part05 part">
         <img class="rellax" data-rellax-speed="-4" src="/assets/img/index/part05.png" alt="" style="transform: translate3d(0px, 0px, 0px);">
@@ -47,14 +47,9 @@
         <h2>
           <span>业务能力</span>
         </h2>
-        <p class="friend_text">每一成功案例，都凝聚了开发者的智慧与努力...每一成功案例，都凝聚了开发者的智慧与努力,每一成功案例，都凝聚了开发者的智慧与努力,
-          每一成功案例，都凝聚了开发者的智慧与努力,
-          每一成功案例，都凝聚了开发者的智慧与努力,每一成功案例，都凝聚了开发者的智慧与努力,
+        <p class="friend_text">
+          每一项业务能力，都展示了我们的走过的道路
         </p>
-        <p class="about_big_font friend_text">
-          这个是关于我们的详细的介绍
-        </p>
-
         <ul class="list_abillity">
           <li class="recruit">
             <a href="./ability/ability.html">
@@ -93,9 +88,7 @@
         <h2>
           <span>项目案例</span>
         </h2>
-        <div class="example_intro">每一成功案例，都凝聚了开发者的智慧与努力...每一成功案例，都凝聚了开发者的智慧与努力,每一成功案例，都凝聚了开发者的智慧与努力,
-          每一成功案例，都凝聚了开发者的智慧与努力,
-          每一成功案例，都凝聚了开发者的智慧与努力,每一成功案例，都凝聚了开发者的智慧与努力,
+        <div class="example_intro">每一款产品，都汇聚了公司成员的辛勤与汗水，每一成功案例，都凝聚了开发者的智慧与努力。
         </div>
 
 
@@ -557,6 +550,7 @@ body {
 
 .content-area {
   position: relative;
+  margin-top: 100px;
 }
 
 .example .content-area .example_viewmore {
@@ -755,6 +749,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 300px;
 }
 
 .list_abillity li {
@@ -1000,6 +995,7 @@ ul {
 }
 
 .friend_text {
+position: absolute;
   width: 400px;
   margin-left: -20px;
   margin-top: 100px
@@ -1075,6 +1071,7 @@ ul {
 
 .example_intro {
   width: 500px;
+  position: absolute;
 }
 
 @keyframes see {

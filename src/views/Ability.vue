@@ -139,24 +139,17 @@ export default {
   mounted() {
     window.addEventListener('scroll', () => {
       console.log(window.scrollY);
-      // var tuwenImgs = document.querySelectorAll('.tuwen_img')
       if (window.scrollY >= 1323) {
-        // tuwenImgs[0].style.cssText = 'animation: appear 1s forwards;'
         this.firstShow = true
       }
       if (window.scrollY >= 1700) {
         console.log(window.scrollY);
-        // tuwenImgs[1].style.cssText = 'animation: appear 1s forwards;'
         this.secondShow = true
       }
       if (window.scrollY >= 2300) {
-        // console.log(window.scrollY);
-        // tuwenImgs[2].style.cssText = 'animation: appear 1s forwards;'
         this.thirdShow = true
       }
       if (window.scrollY >= 2700) {
-        // console.log(window.scrollY);
-        // tuwenImgs[3].style.cssText = 'animation: appear 1s forwards;'
         this.fourShow = true
       }
     })
@@ -175,7 +168,6 @@ body {
 }
 
 section .section-inner {
-  /* position: relative; */
   width: 100%;
   margin: 0 auto;
   overflow: hidden;

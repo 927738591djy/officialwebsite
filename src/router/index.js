@@ -52,8 +52,10 @@ const routes = [
     },
 ]
 
+
 const router = new vueRouter({
     routes
 })
 
 export default router
+router.afterEach(() => {window.scrollTo(1000,0)})
