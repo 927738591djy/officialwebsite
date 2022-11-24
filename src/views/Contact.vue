@@ -7,7 +7,20 @@
                 <main class="works active">
                     <Banner title="Contact" text="联系我们"></Banner>
                     <section class="section-content js-scroll isView">
-                        <div id="divOutput"></div>
+                        <div class="text">
+                            <span class="small_text">神</span>
+                            <span class="small_text">牛</span>
+                            <span class="small_text">数</span>
+                            <span class="small_text">据</span>
+                            <span class="small_text">,</span>
+                            <span class="small_text">期</span>
+                            <span class="small_text">待</span>
+                            <span class="small_text">您</span>
+                            <span class="small_text">的</span>
+                            <span class="small_text">联</span>
+                            <span class="small_text">系</span>
+                            <span class="small_text">!</span>
+                        </div>
                         <div class="code_box">
                             <img src="https://shenniudata-serverdata.oss-cn-beijing.aliyuncs.com/sn-door/images/zsd.jpg"
                                 style="width:250px;height:250px;">
@@ -30,50 +43,21 @@
 </template>
 
 <script>
-
-
 import Banner from '@/components/Banner.vue'
 export default {
     name: 'Contact',
     components: {
         Banner
     },
-    methods: {
-        outPuting: function () {
-            console.log(11111);
-            var str = "神牛数据，期待您的联系！"
-            var i = 0;
-            var divOutput = document.getElementById('divOutput')
-            if (i <= str.length) {
-                divOutput.innerHTML = str.slice(0, i++) + "";
-                // setTimeout(this.outPuting(), 200)
-                console.log('small')
-            } else {
-                divOutput.innerHTML = str;
-                console.log('sss');
-            }
-        }
-    },
-    mounted() {
-        this.outPuting();
-        window.addEventListener('scroll', function () {
-            console.log(window.scrollY);
-            var fangkuai = document.querySelector('.fangkuai')
-            if (this.window.scrollY >= 500) {
-                console.log(window.scrollY);
-                fangkuai.style.cssText = 'animation: seesmall 1s;'
-            }
+    mounted(){
+        let delayTime = 1
+        let texts = document.querySelectorAll('.small_text')
+        texts.forEach(item => {
+            delayTime += 0.2
+            console.log(item);
+            console.log(delayTime);
+            console.log(item.style.animationDelay = delayTime + 's');
         })
-
-
-
-        // 停止计时器
-        // function stopSetTimeout() {
-        //     var highestTimeoutId = setTimeout(';');
-        //     for (var i = 0; i < highestTimeoutId; i++) {
-        //         clearTimeout(i);
-        //     }
-        // }
     }
 }
 </script>
@@ -321,4 +305,15 @@ body {
         opacity: 1;
 	}
 } */
+.text{
+    font-size: 50px;
+    color: #f0d25a;
+    font-weight: 600;
+    margin-top: 100px;
+}
+.small_text{
+    opacity: 0;
+    animation: appear 2s forwards;
+    /* animation-delay: 3s; */
+}
 </style>
