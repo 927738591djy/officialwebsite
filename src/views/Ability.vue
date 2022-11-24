@@ -4,7 +4,7 @@
 
     <div>
       <main class="works active">
-      <Banner title="ability" text="业务能力" ></Banner>
+        <Banner title="ability" text="业务能力"></Banner>
         <section class="section-content js-scroll isView">
 
           <div class="section-inner">
@@ -16,7 +16,7 @@
               <ul>
                 <li>
                   <div class="black_box">定制化开发</div>
-                  <input type="radio" name="swith"/>
+                  <input type="radio" name="swith" />
                   <div class="bj"></div>
                 </li>
                 <li>
@@ -35,7 +35,7 @@
                 </li>
                 <li>
                   <div class="black_box">物联网</div>
-                  <input type="radio" name="swith"/>
+                  <input type="radio" name="swith" />
                   <div class="bj">
                     <div></div>
                   </div>
@@ -62,11 +62,11 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;网站策划，网站开发，各行各业，电商、在线办公，响应式，覆盖各类平台。开源技术，节省部署运营成本。</p>
             </div>
           </div>
-          <img class="tuwen_img" src="../assets/img/ability/dinzhi1.png" alt="">
+          <img class="tuwen_img" :class="{'appear': firstShow }" src="../assets/img/ability/dinzhi1.png" alt="">
         </div>
 
         <div class="tuwen">
-          <img class="tuwen_img" src="../assets/img/ability/app1.png" alt="">
+          <img class="tuwen_img" :class="{'appear': secondShow }" src="../assets/img/ability/app1.png" alt="">
           <div class="wenfan">
             <h2>专业APP软件开发</h2>
             <span>精湛设计+图标规范+一站式</span>
@@ -95,11 +95,11 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;针对性的业务场景，让您的定制化体验达到最佳!</p>
             </div>
           </div>
-          <img class="tuwen_img" src="../assets/img/ability/chengxu1.png" alt="">
+          <img class="tuwen_img" :class="{'appear': thirdShow }" src="../assets/img/ability/chengxu1.png" alt="">
         </div>
 
         <div class="tuwen">
-          <img class="tuwen_img" src="../assets/img/ability/wulian1.png" alt="">
+          <img class="tuwen_img" :class="{'appear': fourShow }" src="../assets/img/ability/wulian1.png" alt="">
           <div class="wenfan">
             <h2>物联网</h2>
             <span>跨平台+模块化和插件化+一站式</span>
@@ -125,18 +125,55 @@
 import Banner from '@/components/Banner.vue'
 export default {
   name: 'Ability',
-  components:{
+  components: {
     Banner
+  },
+  data() {
+    return {
+      firstShow: false,
+      secondShow: false,
+      thirdShow: false,
+      fourShow: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', () => {
+      console.log(window.scrollY);
+      // var tuwenImgs = document.querySelectorAll('.tuwen_img')
+      if (window.scrollY >= 1323) {
+        // tuwenImgs[0].style.cssText = 'animation: appear 1s forwards;'
+        this.firstShow = true
+      }
+      if (window.scrollY >= 1700) {
+        console.log(window.scrollY);
+        // tuwenImgs[1].style.cssText = 'animation: appear 1s forwards;'
+        this.secondShow = true
+      }
+      if (window.scrollY >= 2300) {
+        // console.log(window.scrollY);
+        // tuwenImgs[2].style.cssText = 'animation: appear 1s forwards;'
+        this.thirdShow = true
+      }
+      if (window.scrollY >= 2700) {
+        // console.log(window.scrollY);
+        // tuwenImgs[3].style.cssText = 'animation: appear 1s forwards;'
+        this.fourShow = true
+      }
+    })
   }
 }
 </script>
 
 <style scoped>
-body {
-    margin: 0;
-    background-color: #fff;
-    overflow: auto;
+.appear{
+  animation: appear 1s forwards
 }
+body {
+  margin: 0;
+  background-color: #fff;
+  overflow: auto;
+}
+
 section .section-inner {
   /* position: relative; */
   width: 100%;
@@ -299,7 +336,7 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 0;
-  background:url('../assets/img/ability/bg.png') no-repeat;
+  background: url('../assets/img/ability/bg.png') no-repeat;
   background-size: cover;
   background-position: center;
   padding: 100px 0;
@@ -355,7 +392,7 @@ input:hover {
 
 .list ul :nth-child(3),
 .list ul :nth-child(3) .bj {
-  background: url('../assets/img/ability/app.png') no-repeat center/cover ;
+  background: url('../assets/img/ability/app.png') no-repeat center/cover;
 }
 
 .list ul :nth-child(4),

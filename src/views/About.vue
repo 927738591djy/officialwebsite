@@ -21,12 +21,12 @@
                                             上海神牛数据综合服务平台主要从事于大数据开发、前端开发、OA&CRM系统开发、物联网产品开发等。大数据平台于2018年1月发布，是基于DAMA国际数据管理协会标准，以及OMG国际组织的CWM元数据标准，为顾客提供系统平台研发、大数据管理、数据集成处理、数据报表和BI管理等服务。
                                             前端开发包括APP、小程序、公众号、定制化开发。
                                         </p>
-                                        <a href="../connect/connect.html" class="connect">
+                                        <router-link to="/contact" class="connect">
                                             <div class="connect_arrow">
-                                                <img src="../assets/img/about/arrow.png" alt=""/>
+                                                <img class="connect_arrow_img" src="../assets/img/about/arrow.png" alt=""/>
                                             </div>
                                             <div>联系我们</div>
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <img src="../assets/img/about/qiye.png" alt="">
                                 </div>
@@ -49,11 +49,11 @@
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;公司拥有强大管理和研发团队，招揽了互联网、数据研究、技术研发、深资设计等方面的高端人才。公司核心技术团队包括清华等国内知名高校的博士和硕士，具有深厚的技术支持。
                             </p>
                         </div>
-                        <img class="tuwen_img" src="../assets/img/about/chengyuan.png" alt="777">
+                        <img :class="{ 'appear': firstShow }" class="tuwen_img" src="../assets/img/about/chengyuan.png" alt="777">
                     </div>
 
                     <div class="tuwen">
-                        <img class="tuwen_img" src="../assets/img/about/mubiao.png" alt="">
+                        <img class="tuwen_img" :class="{ 'appear': secondShow }" src="../assets/img/about/mubiao.png" alt="">
                         <div class="wenfan">
                             <h2>企业目标</h2>
                             <div>
@@ -70,7 +70,7 @@
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;秉承“奋斗为本，成就客户，创造分享，共同成长”的核心价值观，成为客户长期、稳定、可信赖的合作伙伴，为成为软件开发领域标杆高新企业而奋斗，致力于每位客户的满意和成功。成就客户，共创共赢。
                             </p>
                         </div>
-                        <img class="tuwen_img" src="../assets/img/about/fuwu.png" alt="777">
+                        <img :class="{'appear': thirdShow }" class="tuwen_img" src="../assets/img/about/fuwu.png" alt="777">
                     </div>
                 </div>
             </div>
@@ -85,11 +85,45 @@ export default {
     name: 'About',
     components:{
         Banner
+    },
+    data(){
+        return{
+            firstShow:false,
+            secondShow:false,
+            thirdShow:false
+        }
+    },
+    mounted(){
+        window.addEventListener('scroll',  () => {
+        var aboutMore = document.querySelector('.about_more')
+        if (window.scrollY >= 1106) {
+            aboutMore.style.cssText = `width:${window.scrollY}px;height:1000px;border-radius:0; transition: all 0.7s;`
+        }
+        if (window.scrollY <= 1494) {
+            aboutMore.style.cssText = `height:400px;border-radius:50px; transition: all 0.4s;`
+        }
+        if (window.scrollY >= 2600) {
+                console.log(window.scrollY);
+                this.firstShow = true
+        }
+        if (window.scrollY >= 3000) {
+            this.secondShow = true
+        }
+        if (window.scrollY >= 3600) {
+            console.log(window.scrollY);
+            this.thirdShow = true
+        }
+
+    })
+
     }
 }
 </script>
 
 <style scoped>
+.appear{
+    animation: appear 1s forwards;
+}
 section .section-inner {
     position: relative;
     width: 1200px;
@@ -277,17 +311,22 @@ body {
 }
 
 .connect_arrow {
+    /* position: relative; */
     background-color: #f0d25a;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     padding: 10px;
     margin-right: 60px;
+    display: flex;
 }
 
-.connect_arrow img {
+.connect_arrow .connect_arrow_img {
+    /* position: absolute; */
     width: 100%;
     height: 100%;
+    z-index: 30;
+
 }
 
 .about_more {
@@ -301,7 +340,7 @@ body {
     border-radius: 30px;
     text-align: center;
     line-height: 400px;
-    z-index: -1;
+    z-index: 0;
 }
 
 @keyframes appear {
