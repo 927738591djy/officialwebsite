@@ -1,7 +1,7 @@
 <template>
      <div class="wrapper">
         <div id="contents" aria-live="polite">
-            <div class="container" data-namespace="single" style="visibility: visible;">
+            <div data-namespace="single" style="visibility: visible;">
 
                 <main class="works active">
                     <!-- <div class="page_title section-inner  ">
@@ -54,83 +54,6 @@ export default {
 </script>
 
 <style scoped>
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 500;
-}
-
-header .section-inner {
-    z-index: 10;
-}
-
-header .header-area {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 80px;
-    transition: padding-top 0.5s linear;
-}
-
-header .header-area .logo-main img {
-    width: 50px;
-    height: 50px;
-    margin-right: 30px;
-}
-
-header .header-area .logo-main a {
-    display: flex;
-    text-decoration: none;
-    color: #000;
-}
-
-header nav .navi-global {
-    display: flex;
-}
-
-header nav .navi-global li {
-    margin-right: 28px;
-}
-
-header nav .navi-global li a {
-    position: relative;
-    display: block;
-    text-decoration: none;
-    color: #111;
-    font-size: 14px;
-    font-family: "akrobat";
-    letter-spacing: 3.5px;
-}
-
-header nav .navi-global li span {
-    position: relative;
-    font-family: "akrobat";
-}
-
-header nav .navi-global li span:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    border-bottom: solid 2px #111;
-    transition: width 0.2s cubic-bezier(0.79, 0.17, 0.15, 0.96) 0.05s;
-}
-
-header nav .navi-global li.menu a {
-    padding-right: 15px;
-}
-
-header nav .navi-global li a {
-    position: relative;
-    display: block;
-    text-decoration: none;
-    color: #111;
-    font-size: 14px;
-    font-family: "akrobat";
-    letter-spacing: 3.5px;
-}
-
 .section-inner {
     position: relative;
     width: 1200px;
@@ -294,12 +217,15 @@ footer .number {
     box-shadow: 11px 13px 27px 6px rgb(0 0 0 / 6%);
 }
 
-.example_img h2,
-p {
+.example_img h2,p
+ {
     width: 300px;
     margin-left: 100px;
+    margin-top: 30px;
 }
-
+h2{
+    font-size: 25px;
+}
 .example_img div:nth-child(even) {
     margin-top: 250px;
 }
