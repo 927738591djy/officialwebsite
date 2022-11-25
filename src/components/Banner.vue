@@ -1,16 +1,17 @@
 <template>
-    
-        <section class="section-head">
-            <div class="black-area">
-                <div class="text-area">
-                    <h2>{{ title }}</h2>
-                    <p class="text-mini">{{ text }}</p>
-                </div>
-            </div>
-            <img src="../assets/img/ability/ability.png" alt="">
 
-        </section>
-    
+    <section class="section-head">
+        <div class="black-area">
+            <div class="text-area">
+                <h2>{{ title }}</h2>
+                <p class="text-mini">{{ text }}</p>
+            </div>
+        </div>
+        <img :src="getImageUrl" alt="">
+        <!-- <img src="../assets/img/about/about.png" alt=""> -->
+
+    </section>
+
 </template>
 
 <script>
@@ -18,7 +19,17 @@ export default {
     name: 'Banner',
     data() {
         return {
+            type:''
         }
+    },
+    computed: {
+        getImageUrl() {
+            
+            return require('@/assets/img/' + this.type + '/'+ this.type + '.png');
+        }
+    },
+    created() {
+       this.type = this.$route.path.replace('/','')
     },
     props: {
         title: {
@@ -38,7 +49,8 @@ export default {
     padding-top: 140px;
     position: relative;
 }
-.text-area{
+
+.text-area {
     margin-left: -100px;
 }
 
@@ -80,6 +92,7 @@ export default {
     bottom: -100px;
     animation: seetwo 1s;
 }
+
 @keyframes see {
     0% {
         transform: translatex(-100%);

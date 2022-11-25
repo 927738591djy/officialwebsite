@@ -2,7 +2,7 @@
     <div>
 
         <div class="wrapper">
-            
+
             <div id="contents" aria-live="polite">
 
 
@@ -23,7 +23,8 @@
                                         </p>
                                         <router-link to="/contact" class="connect">
                                             <div class="connect_arrow">
-                                                <img class="connect_arrow_img" src="../assets/img/about/arrow.png" alt=""/>
+                                                <img class="connect_arrow_img" src="../assets/img/about/arrow.png"
+                                                    alt="" />
                                             </div>
                                             <div>联系我们</div>
                                         </router-link>
@@ -49,11 +50,13 @@
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;公司拥有强大管理和研发团队，招揽了互联网、数据研究、技术研发、深资设计等方面的高端人才。公司核心技术团队包括清华等国内知名高校的博士和硕士，具有深厚的技术支持。
                             </p>
                         </div>
-                        <img :class="{ 'appear': firstShow }" class="tuwen_img" src="../assets/img/about/chengyuan.png" alt="777">
+                        <img :class="{ 'appear': firstShow }" class="tuwen_img" src="../assets/img/about/chengyuan.png"
+                            alt="777">
                     </div>
 
                     <div class="tuwen">
-                        <img class="tuwen_img" :class="{ 'appear': secondShow }" src="../assets/img/about/mubiao.png" alt="">
+                        <img class="tuwen_img" :class="{ 'appear': secondShow }" src="../assets/img/about/mubiao.png"
+                            alt="">
                         <div class="wenfan">
                             <h2>企业目标</h2>
                             <div>
@@ -70,7 +73,8 @@
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;秉承“奋斗为本，成就客户，创造分享，共同成长”的核心价值观，成为客户长期、稳定、可信赖的合作伙伴，为成为软件开发领域标杆高新企业而奋斗，致力于每位客户的满意和成功。成就客户，共创共赢。
                             </p>
                         </div>
-                        <img :class="{'appear': thirdShow }" class="tuwen_img" src="../assets/img/about/fuwu.png" alt="777">
+                        <img :class="{ 'appear': thirdShow }" class="tuwen_img" src="../assets/img/about/fuwu.png"
+                            alt="777">
                     </div>
                 </div>
             </div>
@@ -83,47 +87,48 @@
 import Banner from '@/components/Banner.vue'
 export default {
     name: 'About',
-    components:{
+    components: {
         Banner
     },
-    data(){
-        return{
-            firstShow:false,
-            secondShow:false,
-            thirdShow:false
+    data() {
+        return {
+            firstShow: false,
+            secondShow: false,
+            thirdShow: false
         }
     },
-    mounted(){
-        window.addEventListener('scroll',  () => {
-        var aboutMore = document.querySelector('.about_more')
-        if (window.scrollY >= 1106) {
-            aboutMore.style.cssText = `width:${window.scrollY}px;height:1000px;border-radius:0; transition: all 0.7s;`
-        }
-        if (window.scrollY <= 1494) {
-            aboutMore.style.cssText = `height:400px;border-radius:50px; transition: all 0.4s;`
-        }
-        if (window.scrollY >= 2600) {
-                console.log(window.scrollY);
-                this.firstShow = true
-        }
-        if (window.scrollY >= 3000) {
-            this.secondShow = true
-        }
-        if (window.scrollY >= 3600) {
-            console.log(window.scrollY);
-            this.thirdShow = true
-        }
-
-    })
-
+    mounted() {
+     
+            window.addEventListener('scroll', () => {
+                if (this.$route.path == '/about') {
+                    let aboutMore = document.querySelector('.about_more')
+                    if (window.scrollY >= 1106) {
+                        aboutMore.style.cssText = `width:${window.scrollY}px;height:1000px;border-radius:0; transition: all 0.7s;`
+                    }
+                    if (window.scrollY <= 1494) {
+                        aboutMore.style.cssText = `height:400px;border-radius:50px; transition: all 0.4s;`
+                    }
+                    if (window.scrollY >= 2600) {
+                        this.firstShow = true
+                    }
+                    if (window.scrollY >= 3000) {
+                        this.secondShow = true
+                    }
+                    if (window.scrollY >= 3600) {
+                        this.thirdShow = true
+                    }
+                }
+            })
     }
+
 }
 </script>
 
 <style scoped>
-.appear{
+.appear {
     animation: appear 1s forwards;
 }
+
 section .section-inner {
     position: relative;
     width: 1200px;
@@ -308,6 +313,11 @@ body {
     padding: 10px 30px;
     justify-content: space-between;
     border-radius: 50px;
+    transition: all 0.6s;
+}
+
+.connect:hover {
+    background-color: #f0d25a;
 }
 
 .connect_arrow {

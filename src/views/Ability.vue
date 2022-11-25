@@ -138,12 +138,10 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY);
       if (window.scrollY >= 1323) {
         this.firstShow = true
       }
       if (window.scrollY >= 1700) {
-        console.log(window.scrollY);
         this.secondShow = true
       }
       if (window.scrollY >= 2300) {

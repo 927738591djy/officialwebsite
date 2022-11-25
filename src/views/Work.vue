@@ -166,8 +166,6 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', () => {
-      console.log(11)
-      console.log(window.scrollY);
       if (window.scrollY >= 683) {
         this.workShow = true
       }

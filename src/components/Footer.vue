@@ -7,10 +7,10 @@
                     <div class="navi-box">
                         <p class="navi-name grey"> CORPORATE</p>
                         <ul class="list-navi_global">
-                            <li><a href="/concept"> <span>项目案例</span></a></li>
-                            <li><a href="/works"><span>业务能力</span></a></li>
-                            <li><a href="/about"> <span>关于我们</span></a></li>
-                            <li><a href="/blog"> <span>联系我们</span></a></li>
+                            <li><router-link to="/work"> <span>项目案例</span></router-link></li>
+                            <li><router-link to="/ability"><span>业务能力</span></router-link></li>
+                            <li><router-link to="/about"> <span>关于我们</span></router-link></li>
+                            <li><router-link to="/contact"> <span>联系我们</span></router-link></li>
                         </ul>
                     </div>
                     <div class="number">COPYRIGHT © 2018 POWERED BY SHENNIUDATA 备案号：沪ICP备18027450号-1</div>
