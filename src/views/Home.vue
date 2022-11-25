@@ -142,7 +142,7 @@
                 <div class="pc_mask">
                   <div>{{ item.articleTitle }}</div>
                 </div>
-                <img src="../assets/img/index-work/9.png" alt="">
+                <img :src="item.articleImg" alt="">
                 <div class="index_work_text">
                   {{ item.articleContent }}
                 </div>
@@ -202,6 +202,17 @@
                   <div>中海地产-互动游戏</div>
                 </div>
                 <img src="../assets/img/index-work/14.png" alt="">
+              </a>
+            </div>
+
+
+
+            <div v-for="item in phoneList" :key="item.id" class="two_box">
+              <a href="">
+                <div class="yidong_mask">
+                  <div>{{ item.articleTitle }}</div>
+                </div>
+                <img :src="item.articleImg" alt="">
               </a>
             </div>
           </div>

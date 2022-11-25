@@ -15,7 +15,6 @@
             <div class="section-inner">
               <div class="fangkuai" :class="{ 'seesmall': workShow }"></div>
               <ul class="list-works">
-
                 <li>
                   <a href="../works/taptap/taptap.html">
                     <p class="thumb">
@@ -142,8 +141,32 @@
                     </div>
                   </a>
                 </li>
+
+
+
+
+                <li v-for="item in workList" :key="item.id">
+                  <a href="../works/taptap/taptap.html">
+                    <p class="thumb">
+                      <img :src="item.articleImg" alt="">
+                    </p>
+                    <div class="detail-box">
+                      <p class="client">
+                        {{item.keywords}}
+                      </p>
+                      <p class="title">
+                        {{item.article_title}}
+                      </p>
+                      <p class="category">
+                       {{item.description}}
+                      </p>
+                    </div>
+                  </a>
+                </li>
               </ul>
 
+
+              
             </div>
           </section>
         </main>
@@ -173,7 +196,7 @@ export default {
   methods: {
     async getImageList() {
       try {
-        this.workList = await getImageList();
+        this.workList = (await getImageList()).rows
         console.log(this.workList);
       } catch (error) {
         console.log(error);
