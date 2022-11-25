@@ -3,7 +3,7 @@ import Vue from 'vue'
 Vue.prototype.$http = axios
 
 const request = axios.create({
-    baseURL: "http://192.168.2.45:8088",
+    baseURL: "http://192.168.2.16:8088",
     timeout: 5000,
 })
 

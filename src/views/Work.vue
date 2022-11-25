@@ -145,8 +145,9 @@
 
 
 
-                <li v-for="item in workList" :key="item.id">
-                  <a href="../works/taptap/taptap.html">
+                <li v-for="item in workList" :key="item.articleId">
+                  <!-- <router-link :to="'/example'+'/'+item.articleId"> -->
+                    <router-link :to="{path:'/example',query:{id:item.articleId,keywords:item.keywords,title:item.articleTitle}}">
                     <p class="thumb">
                       <img :src="item.articleImg" alt="">
                     </p>
@@ -155,13 +156,13 @@
                         {{item.keywords}}
                       </p>
                       <p class="title">
-                        {{item.article_title}}
+                        {{item.articleTitle}}
                       </p>
                       <p class="category">
                        {{item.description}}
                       </p>
                     </div>
-                  </a>
+                  </router-link>
                 </li>
               </ul>
 

@@ -138,7 +138,7 @@
 
 
             <li v-for="item in list" :key="item.id">
-              <a href="">
+              <router-link :to="{path:'/example',query:{id:item.articleId,keywords:item.keywords,title:item.articleTitle}}">
                 <div class="pc_mask">
                   <div>{{ item.articleTitle }}</div>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="index_work_text">
                   {{ item.articleContent }}
                 </div>
-              </a>
+              </router-link>
             </li>
 
 
@@ -207,18 +207,18 @@
 
 
 
-            <div v-for="item in phoneList" :key="item.id" class="two_box">
-              <a href="">
+            <div v-for="item in phoneList" :key="item.articleId" class="two_box">
+              <router-link :to="{path:'/example',query:{id:item.articleId,keywords:item.keywords,title:item.articleTitle}}">
                 <div class="yidong_mask">
                   <div>{{ item.articleTitle }}</div>
                 </div>
                 <img :src="item.articleImg" alt="">
-              </a>
+              </router-link>
             </div>
           </div>
-          <a :class="{ 'appear': viewMoreShow }" class="example_viewmore" href="./work/work.html">
+          <router-link :class="{ 'appear': viewMoreShow }" class="example_viewmore" to="/work">
             view more
-          </a>
+          </router-link>
 
         </div>
 
@@ -238,7 +238,7 @@
       <div class="about_text">
         <h2 class="about_h2">关于我们</h2>
         <p class="about_p">在大数据时代浪潮中，神牛数据以未来社区建设作为发展起点，立志成为一家全世界一流智慧终端、融合网、云大脑、N平台的高科技公司！</p>
-        <a class="about_viewmore" href="">view more</a>
+        <router-link class="about_viewmore" to="/about">view more</router-link>
       </div>
 
     </div>

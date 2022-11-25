@@ -1,5 +1,5 @@
 <template>
-     <div class="wrapper">
+    <div class="wrapper">
         <div id="contents" aria-live="polite">
             <div data-namespace="single" style="visibility: visible;">
 
@@ -11,8 +11,8 @@
                     <section class="section-head">
                         <div class="black-area">
                             <div class="section-inner">
-                                <div class="name">taptap</div>
-                                <div class="name_mini">游戏活动h5</div>
+                                <div class="name">{{keywords}}</div>
+                                <div class="name_mini">{{title}}</div>
                             </div>
                         </div>
                     </section>
@@ -23,7 +23,7 @@
                             <h2>扫码签到功能</h2>
                             <p>用户可通过扫描邀请函二维码进行注册，扫码现场签到，</p>
                         </div>
-                        <div>           
+                        <div>
                             <img src="../assets/img/taptap/2.png" alt="">
                             <h2></h2>
                             <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
@@ -38,6 +38,19 @@
                             <h2></h2>
                             <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
                         </div>
+                        <div>
+                            <img src="../assets/img/taptap/4.png" alt="">
+                            <h2></h2>
+                            <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
+                        </div>
+
+
+                        <div v-for="item in list" :key="item.tagId">
+                            <!-- <img :src="item.tagIco" alt=""> -->
+                            <img src="../assets/img/taptap/4.png" alt="">
+                            <h2>{{item.tagName}}</h2>
+                            <p>{{item.description}}</p>
+                        </div>
                     </div>
                 </main>
             </div>
@@ -48,8 +61,33 @@
 </template>
 
 <script>
+import { getImageDetail } from "@/api/image.js";
 export default {
-    name: 'Example'
+    name: 'Example',
+    data(){
+        return{
+            id:'',
+            keywords:'',
+            title:'',
+            list:[]
+        }
+    },
+    created() {
+        this.id = this.$route.query.id
+        this.keywords = this.$route.query.keywords
+        this.title = this.$route.query.title
+        this.getImageDetail(this.id)
+    },
+    methods: {
+        async getImageDetail(id) {
+            try {
+                this.list = (await getImageDetail(id)).data
+                console.log(this.list);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
 }
 </script>
 
@@ -217,15 +255,17 @@ footer .number {
     box-shadow: 11px 13px 27px 6px rgb(0 0 0 / 6%);
 }
 
-.example_img h2,p
- {
+.example_img h2,
+p {
     width: 300px;
     margin-left: 100px;
     margin-top: 30px;
 }
-h2{
+
+h2 {
     font-size: 25px;
 }
+
 .example_img div:nth-child(even) {
     margin-top: 250px;
 }
@@ -251,5 +291,4 @@ h2{
         opacity: 1;
     }
 }
-
 </style>
