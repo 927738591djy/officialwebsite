@@ -135,6 +135,21 @@
                 </div>
               </a>
             </li>
+
+
+            <li v-for="item in list" :key="item.id">
+              <a href="">
+                <div class="pc_mask">
+                  <div>{{ item.articleTitle }}</div>
+                </div>
+                <img src="../assets/img/index-work/9.png" alt="">
+                <div class="index_work_text">
+                  {{ item.articleContent }}
+                </div>
+              </a>
+            </li>
+
+
           </ul>
 
           <div class="yidongduan">移动端</div>
@@ -190,7 +205,7 @@
               </a>
             </div>
           </div>
-          <a  :class="{ 'appear': viewMoreShow }" class="example_viewmore" href="./work/work.html">
+          <a :class="{ 'appear': viewMoreShow }" class="example_viewmore" href="./work/work.html">
             view more
           </a>
 
@@ -276,36 +291,53 @@
   
 <script>
 
+import { getImageList } from "@/api/image.js";
+
+
 export default {
   name: 'Home',
   data() {
     return {
       abilityShow: false,
       isAppear: false,
-      exampleShow:false,
-      aboutShow:false,
-      friendShow:false,
-      viewMoreShow:false
+      exampleShow: false,
+      aboutShow: false,
+      friendShow: false,
+      viewMoreShow: false,
+      list: [],
     }
   },
   created() {
-    console.log(2222222);
+    this.getImageList()
   },
-
+  computed: {
+    phoneList: function () {
+      return this.list.filter((item) => {
+        return item.articleType == 2
+      })
+    }
+  },
+  methods: {
+    async getImageList() {
+      try {
+        this.list = (await getImageList()).rows
+        console.log(this.list);
+        console.log(this.phoneList);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  },
   mounted() {
     var part1 = document.querySelector('.part1');
     var part2 = document.querySelector('.part2');
     var part3 = document.querySelector('.part3');
     var part4 = document.querySelector('.part4');
-    window.addEventListener('scroll', (e) => {
-      console.log(e);
+    window.addEventListener('scroll', () => {
       part1.style.cssText = `transform: translate3d(0px, ${window.scrollY}px, 0px)`
       part2.style.cssText = `transform: translate3d(0px, ${-window.scrollY / 10}px, 0px)`
       part3.style.cssText = `transform: translate3d(0px, ${window.scrollY}px, 0px)`
       part4.style.cssText = `transform: translate3d(0px, ${-window.scrollY / 10}px, 0px)`
-
-      console.log(11)
-      console.log(window.scrollY);
       if (window.scrollY >= 483) {
         this.abilityShow = true
       }
@@ -995,7 +1027,7 @@ ul {
 }
 
 .friend_text {
-position: absolute;
+  position: absolute;
   width: 400px;
   margin-left: -20px;
   margin-top: 100px

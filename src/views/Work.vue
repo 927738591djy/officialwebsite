@@ -154,6 +154,8 @@
 
 <script>
 import Banner from '@/components/Banner.vue'
+import { getImageList } from "@/api/image.js";
+
 export default {
   name: 'Work',
   components: {
@@ -161,7 +163,21 @@ export default {
   },
   data() {
     return {
-      workShow:false
+      workShow: false,
+      workList:[]
+    }
+  },
+  created() {
+    this.getImageList()
+  },
+  methods: {
+    async getImageList() {
+      try {
+        this.workList = await getImageList();
+        console.log(this.workList);
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
   mounted() {
@@ -169,7 +185,7 @@ export default {
       if (window.scrollY >= 683) {
         this.workShow = true
       }
-    
+
     })
 
 
@@ -181,6 +197,7 @@ export default {
 .seesmall {
   animation: seesmall 1s;
 }
+
 section .section-inner {
   position: relative;
   width: 1200px;

@@ -10,3 +10,4 @@ new Vue({
   router, //vue中使用路由对象
   render: h => h(App),
 }).$mount('#app')
+
