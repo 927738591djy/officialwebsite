@@ -18,6 +18,7 @@
                     </section>
 
                     <div class="example_img">
+                        <div class="rich_text" v-html="str"></div> 
                         <div>
                             <img src="../assets/img/taptap/1.png" alt="">
                             <h2>扫码签到功能</h2>
@@ -44,13 +45,14 @@
                             <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
                         </div>
 
-
-                        <div v-for="item in list" :key="item.tagId">
-                            <!-- <img :src="item.tagIco" alt=""> -->
+<!-- 
+                        <div v-for="item in list" :key="item.articleId">
                             <img src="../assets/img/taptap/4.png" alt="">
                             <h2>{{item.tagName}}</h2>
                             <p>{{item.description}}</p>
-                        </div>
+                        </div> -->
+
+                        <div v-html="str"></div> 
                     </div>
                 </main>
             </div>
@@ -69,7 +71,9 @@ export default {
             id:'',
             keywords:'',
             title:'',
-            list:[]
+            richText:'',
+            list:[],
+            str:'<img src="../assets/img/taptap/1.png" alt=""><h2>扫码签到功能</h2><p>用户可通过扫描邀请函二维码进行注册，扫码现场签到，</p>'
         }
     },
     created() {
@@ -81,8 +85,10 @@ export default {
     methods: {
         async getImageDetail(id) {
             try {
-                this.list = (await getImageDetail(id)).data
-                console.log(this.list);
+                this.richText = (await getImageDetail(id)).data
+                console.log(this.richText.articleContent);
+              this.list =  this.richText.articleContent.split('</p>')
+              console.log(this.list);
             } catch (error) {
                 console.log(error);
             }
@@ -290,5 +296,8 @@ h2 {
     100% {
         opacity: 1;
     }
+}
+.rich_text{
+  font-size: 30px;
 }
 </style>

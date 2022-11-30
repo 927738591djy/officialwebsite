@@ -11,6 +11,6 @@ export const getImageList = function(){
 export const getImageDetail = function(id){
     return request({
         method:'get',
-        url:`/cms/tag/list/${id}`,
+        url:`/cms/article/info/${id}`,
     })
 }
