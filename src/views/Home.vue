@@ -104,40 +104,9 @@
                 <div class="index_work_text">仓库货物管理，物流配送，品牌端收货，换货
                 </div>
               </a>
-
             </li>
-            <li>
-              <a href="">
-                <div class="pc_mask">
-                  <div>轩尼诗线下互动平台</div>
-                </div>
-                <img src="../assets/img/index-work/4.png" alt="">
-                <div class="index_work_text">用户可现场扫码打卡，通过线下游戏互动，进行点酒服务</div>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <div class="pc_mask">
-                  <div>智慧教室系统</div>
-                </div>
-                <img src="../assets/img/index-work/8.png" alt="">
-                <div class="index_work_text">包含学生/教师管理、班级管理、课程管理、课次管理和控屏分享功能
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <div class="pc_mask">
-                  <div>智慧城市-智慧灯杆</div>
-                </div>
-                <img src="../assets/img/index-work/9.png" alt="">
-                <div class="index_work_text">远程管理城市街道灯杆，自动化控制灯光，监测环境质量。
-                </div>
-              </a>
-            </li>
-
-
-            <li v-for="item in list" :key="item.id">
+           
+            <li v-for="item in pcList" :key="item.id">
               <router-link :to="{path:'/example',query:{id:item.articleId,keywords:item.keywords,title:item.articleTitle}}">
                 <div class="pc_mask">
                   <div>{{ item.articleTitle }}</div>
@@ -156,23 +125,7 @@
 
 
           <div class="list-service_two">
-            <div class="two_box">
-              <a href="">
-                <div class="yidong_mask">
-                  <div>智慧售楼处</div>
-                </div>
-                <img src="../assets/img/index-work/3.png" alt="">
-              </a>
-            </div>
-            <div class="two_box">
-              <a href="">
-                <div class="yidong_mask">
-                  <div>国延堂商城</div>
-                </div>
-                <img src="../assets/img/index-work/7.png" alt="">
-              </a>
-            </div>
-            <div class="two_box">
+            <!-- <div class="two_box">
               <a href="">
                 <div class="yidong_mask">
                   <div>taptap现场活动平台</div>
@@ -187,26 +140,7 @@
                 </div>
                 <img src="../assets/img/index-work/12.png" alt="">
               </a>
-            </div>
-            <div class="two_box">
-              <a href="">
-                <div class="yidong_mask">
-                  <div>华云荟商城app</div>
-                </div>
-                <img src="../assets/img/index-work/13.png" alt="">
-              </a>
-            </div>
-            <div class="two_box">
-              <a href="">
-                <div class="yidong_mask">
-                  <div>中海地产-互动游戏</div>
-                </div>
-                <img src="../assets/img/index-work/14.png" alt="">
-              </a>
-            </div>
-
-
-
+            </div> -->
             <div v-for="item in phoneList" :key="item.articleId" class="two_box">
               <router-link :to="{path:'/example',query:{id:item.articleId,keywords:item.keywords,title:item.articleTitle}}">
                 <div class="yidong_mask">
@@ -323,6 +257,11 @@ export default {
   },
   computed: {
     phoneList: function () {
+      return this.list.filter((item) => {
+        return item.articleType == 1
+      })
+    },
+    pcList: function () {
       return this.list.filter((item) => {
         return item.articleType == 2
       })
