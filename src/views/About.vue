@@ -33,7 +33,7 @@
                                 </div>
 
                                 <div class="about_more">
-                                    <div>更多的我们</div>
+                                    <div>More About Us</div>
 
                                 </div>
                             </div>

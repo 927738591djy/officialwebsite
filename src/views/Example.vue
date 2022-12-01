@@ -17,43 +17,14 @@
                         </div>
                     </section>
 
-                    <div class="example_img">
-                        <div class="rich_text" v-html="str"></div> 
-                        <div>
+                    <!-- <div class="example_img"> -->
+                        <!-- <div>
                             <img src="../assets/img/taptap/1.png" alt="">
                             <h2>扫码签到功能</h2>
                             <p>用户可通过扫描邀请函二维码进行注册，扫码现场签到，</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/taptap/2.png" alt="">
-                            <h2></h2>
-                            <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/taptap/3.png" alt="">
-                            <h2></h2>
-                            <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/taptap/4.png" alt="">
-                            <h2></h2>
-                            <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
-                        </div>
-                        <div>
-                            <img src="../assets/img/taptap/4.png" alt="">
-                            <h2></h2>
-                            <p>为用户在活动参与时提供场地导览图，会议流程，问卷调研，现场问答等功能，提示用户前往指定区域解决问题。</p>
-                        </div>
-
-<!-- 
-                        <div v-for="item in list" :key="item.articleId">
-                            <img src="../assets/img/taptap/4.png" alt="">
-                            <h2>{{item.tagName}}</h2>
-                            <p>{{item.description}}</p>
                         </div> -->
-
-                        <div v-html="str"></div> 
-                    </div>
+                        <div v-html="richText"></div> 
+                    <!-- </div> -->
                 </main>
             </div>
         </div>
@@ -71,9 +42,7 @@ export default {
             id:'',
             keywords:'',
             title:'',
-            richText:'',
-            list:[],
-            str:'<img src="../assets/img/taptap/1.png" alt=""><h2>扫码签到功能</h2><p>用户可通过扫描邀请函二维码进行注册，扫码现场签到，</p>'
+            richText:''
         }
     },
     created() {
@@ -85,10 +54,8 @@ export default {
     methods: {
         async getImageDetail(id) {
             try {
-                this.richText = (await getImageDetail(id)).data
-                console.log(this.richText.articleContent);
-              this.list =  this.richText.articleContent.split('</p>')
-              console.log(this.list);
+                this.richText = (await getImageDetail(id)).data.articleContent
+                console.log(this.richText);
             } catch (error) {
                 console.log(error);
             }
